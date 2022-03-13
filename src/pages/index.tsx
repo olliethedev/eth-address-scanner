@@ -6,6 +6,7 @@ import ButtonLink from '@/components/links/ButtonLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
+import Table from '@/components/Table';
 
 /**
  * SVGR Support
@@ -59,7 +60,7 @@ export default function HomePage() {
                 alt='Deploy with Vercel'
               />
             </UnstyledLink>
-
+            <Table />
             <footer className='absolute bottom-2 text-gray-700'>
               © {new Date().getFullYear()} By{' '}
               <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
