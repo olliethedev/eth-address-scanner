@@ -2,39 +2,21 @@
 import React from 'react';
 import { Column, useSortBy, useTable } from 'react-table';
 
-function Table() {
-  const data = React.useMemo(
-    () => [
-      {
-        col1: 'Hello',
-        col2: 'World',
-      },
-      {
-        col1: 'react-table',
-        col2: 'rocks',
-      },
-      {
-        col1: 'whatever',
-        col2: 'you want',
-      },
-    ],
-    []
-  );
+interface RowType {
+  col1: string;
+  col2: string;
+  col3: string;
+  col4: string;
+  col5: string;
+  col6: string;
+  col7: string;
+}
+interface TableProps {
+  columns: Column<RowType>[];
+  data: RowType[];
+}
 
-  const columns = React.useMemo<Column<typeof data[0]>[]>(
-    () => [
-      {
-        Header: 'Column 1',
-        accessor: 'col1',
-      },
-      {
-        Header: 'Column 2',
-        accessor: 'col2',
-      },
-    ],
-    []
-  );
-
+const Table: React.FC<TableProps> = ({ columns, data }) => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data }, useSortBy);
 
@@ -46,16 +28,11 @@ function Table() {
             {headerGroup.headers.map((column) => (
               <th
                 {...column.getHeaderProps(column.getSortByToggleProps())}
-                style={{
-                  borderBottom: 'solid 3px red',
-                  background: 'aliceblue',
-                  color: 'black',
-                  fontWeight: 'bold',
-                }}
+                className='border-2 border-black bg-blue-100 font-bold hover:cursor-pointer'
               >
                 {column.render('Header')}
                 <span>
-                  {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+                  {column.isSorted ? (column.isSortedDesc ? ' ▼' : ' ▲') : ''}
                 </span>
               </th>
             ))}
@@ -71,11 +48,7 @@ function Table() {
                 return (
                   <td
                     {...cell.getCellProps()}
-                    style={{
-                      padding: '10px',
-                      border: 'solid 1px gray',
-                      background: 'papayawhip',
-                    }}
+                    className='break-all border-2 border-black p-2 text-sm'
                   >
                     {cell.render('Cell')}
                   </td>
@@ -87,6 +60,6 @@ function Table() {
       </tbody>
     </table>
   );
-}
+};
 
 export default Table;
