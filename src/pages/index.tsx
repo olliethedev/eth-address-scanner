@@ -97,7 +97,7 @@ export default function HomePage() {
     <Layout>
       <Seo templateTitle='Home' />
 
-      <main className='mx-auto flex max-w-5xl flex-col items-center space-y-8 bg-white'>
+      <main className='mx-auto flex max-w-7xl flex-col items-center space-y-8 bg-white'>
         <div className='flex w-full flex-col space-y-4'>
           <h1 className='mt-4'>Scanner</h1>
           <div>
@@ -173,11 +173,30 @@ export default function HomePage() {
               {
                 Header: 'From',
                 accessor: 'col2',
-                Cell: ({ row }) => <a href=''>{row.original.col2}</a>,
+                Cell: ({ row }) => (
+                  <a
+                    className='text-blue-500 underline'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    href={`https://etherscan.io/address/${row.original.col2}`}
+                  >
+                    {row.original.col2}
+                  </a>
+                ),
               },
               {
                 Header: 'To',
                 accessor: 'col3',
+                Cell: ({ row }) => (
+                  <a
+                    className='text-blue-500 underline'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    href={`https://etherscan.io/address/${row.original.col3}`}
+                  >
+                    {row.original.col3}
+                  </a>
+                ),
               },
               {
                 Header: 'Contract',
@@ -194,6 +213,16 @@ export default function HomePage() {
               {
                 Header: 'Hash',
                 accessor: 'col7',
+                Cell: ({ row }) => (
+                  <a
+                    className='text-blue-500 underline'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    href={`https://etherscan.io/tx/${row.original.col7}`}
+                  >
+                    {row.original.col7}
+                  </a>
+                ),
               },
             ]}
             data={transactions.map((tx) => ({
