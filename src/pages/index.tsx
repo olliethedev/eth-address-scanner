@@ -97,9 +97,9 @@ export default function HomePage() {
     <Layout>
       <Seo templateTitle='Home' />
 
-      <main className='mx-auto flex max-w-7xl flex-col items-center space-y-8 bg-white'>
-        <div className='flex w-full flex-col space-y-4'>
-          <h1 className='mt-4'>Scanner</h1>
+      <main className='mx-auto flex max-w-7xl flex-col items-center space-y-8 bg-white py-8'>
+        <div className='flex w-full flex-col space-y-2'>
+          <h1>Scanner</h1>
           <div>
             <label className='mt-4 mr-2'>API Key:</label>
             <input

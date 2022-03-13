@@ -21,7 +21,10 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
     useTable({ columns, data }, useSortBy);
 
   return (
-    <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
+    <table
+      {...getTableProps()}
+      className='w-full border-2 border-black bg-gray-50'
+    >
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>

@@ -5,12 +5,12 @@ import { openGraph } from '@/lib/helper';
 
 // !STARTERCONF Change these default meta
 const defaultMeta = {
-  title: 'Next.js + Tailwind CSS + TypeScript Starter',
-  siteName: 'Next.js + Tailwind CSS + TypeScript Starter',
+  title: 'Ethereum Address Scanner',
+  siteName: 'Ethereum Address Scanner',
   description:
-    'A starter for Next.js, Tailwind CSS, and TypeScript with Absolute Import, Seo, Link component, pre-configured with Husky',
+    'Ethereum Address Scanner is a tool to scan for transactions on the Ethereum blockchain.',
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: 'https://tsnext-tw.thcl.dev',
+  url: 'https://eth-scanner.olliecodes.com/',
   type: 'website',
   robots: 'follow, index',
   /** No need to be filled, will be populated with openGraph function */
